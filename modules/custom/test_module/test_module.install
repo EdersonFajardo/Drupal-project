@@ -1,0 +1,69 @@
+<?php
+/**
+ * Implement hook_schema()
+ */
+
+function test_module_schema() {
+
+  $schema['test_module'] = array(
+    'description' => 'Save the data of the participant',
+    'fields' => array(
+      'vid' => array(
+        'type' => 'serial',
+        'not_null' => TRUE,
+        'description' => 'Primary Key: Identificador unico del participante',
+      ),
+      'surname' => array(
+        'type' => 'varchar',
+	'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Participant surname.',
+      ),
+      'name' => array(
+        'type' => 'varchar',
+	'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Participant name.',
+      ),
+      'document_type' => array(
+        'type' => 'varchar',
+	'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Participant document type.',
+      ),
+      'identification_number' => array(
+        'type' => 'varchar',
+	'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Participant identification number.',
+      ),
+      'email' => array(
+        'type' => 'varchar',
+	'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Participant email.',
+      ),
+      'mobile_number' => array(
+        'type' => 'varchar',
+	'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Participant mobile number.',
+      ),
+      'country' => array(
+        'type' => 'varchar',
+	'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Participant country',
+      ),
+    ),
+    'primary key' => array('vid'),
+  );
+  return $schema;
+}

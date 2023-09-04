@@ -1,0 +1,29 @@
+<style>
+  h1.title-added {
+    text-aling: center;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-bottom: 30px;
+  }
+  .form-added {
+    padding: 20px 10px;
+    border: 2px dotted;
+    margin-bottom: 20px;
+  }
+</style>
+
+<h1 class= "title-addedr">
+  {{ title }}
+</h1>
+<div class= "form-addedr">
+  {{ form }}
+</div>
+<ul>
+  {% for record in records %}
+  <li> {{record.name}} {{record.surname}}
+  <p> {{record.email}} </p>
+  <p> {{record.documento_type}} </p>
+  <p> {{record.identification_number}} </p>
+  </li>
+  {% endfor %}
+</ul>

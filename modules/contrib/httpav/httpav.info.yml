@@ -1,0 +1,10 @@
+name: HTTP Anti-virus
+type: module
+description: Submit file uploads to a HTTP endpoint for scanning.
+package: Anti-virus
+core_version_requirement: ^8 || ^9 || ^10
+
+# Information added by Drupal.org packaging script on 2023-08-30
+version: '1.0.0'
+project: 'httpav'
+datestamp: 1693366894

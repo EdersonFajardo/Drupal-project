@@ -1,0 +1,15 @@
+<?php
+
+/** @file ...*/
+
+function test_module_theme($existing, $type, $theme, $path) {
+  return [
+    'test-module-form' => [
+      'Variables' => [
+        'title' => NULL,
+        'records' => NULL,
+        'form' => NULL,
+      ]
+    ]
+  ];
+}

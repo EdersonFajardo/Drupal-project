@@ -1,0 +1,13 @@
+name: Test Module
+description: 'User form with attributes'
+package: test_module
+
+type: module
+core_version_requirement: ^10 || ^9
+
+project: test_module
+'interface translation project': test_module
+'interface translation server pattern': modules/custom/test_module/traslations/test_module-%language.po
+
+dependencies:
+  - none

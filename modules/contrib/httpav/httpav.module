@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * The module file.
+ */
+
+use \Drupal\file\FileInterface;
+use Drupal\httpav\Scanner;
+
+/**
+ * Implements hook_file_validate().
+ */
+function httpav_file_validate(FileInterface $file) {
+  $errors = [];
+
+  // @var \Drupal\httpav\scanner $scanner.
+  $scanner = \Drupal::service('httpav.scanner');
+
+  if ($scanner->isEnabled() && $scanner->isScannable($file)) {
+    $result = $scanner->scan($file);
+    switch ($result) {
+      case Scanner::FILE_IS_INFECTED:
+        $errors[] = t('A virus has been detected in the file. The file will be deleted.');
+        break;
+      case Scanner::FILE_IS_UNCHECKED:
+        if (!$scanner->isAllowedUnchecked()) {
+          $errors[] = t('The anti-virus scanner could not check the file, the file cannot be uploaded. Contact a site administrator if this problem persists.');
+        }
+        break;
+    }
+  } else {
+    \Drupal::logger('httpav')->info('Uploaded %filename was not checked and was uploaded without doing so.', [
+      '%filename' => $file->getFilename(),
+    ]);
+  }
+
+  return $errors;
+}

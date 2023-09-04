@@ -1,0 +1,6 @@
+httpav.config_display:
+  title: 'HTTP Anti-virus'
+  parent: system.admin_config_media
+  description: 'Configure HTTP anti-virus integration.'
+  route_name: httpav.config
+

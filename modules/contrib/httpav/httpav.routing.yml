@@ -1,0 +1,7 @@
+httpav.config:
+  path: '/admin/config/httpav'
+  defaults:
+    _form: 'Drupal\httpav\Form\ConfigForm'
+    _title: 'HTTP Anti-virus configuration'
+  requirements:
+    _permission: 'configure httpav'

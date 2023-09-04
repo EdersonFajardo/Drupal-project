@@ -1,0 +1,7 @@
+test_module.form:
+  path: '/test/formulario'
+  default:
+    _form: '\Drupal\test_module\Form\TestModuleForm'
+    _title: 'My Test Module'
+  requeriment:
+    _permission: 'access content'

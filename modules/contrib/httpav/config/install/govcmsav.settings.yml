@@ -1,0 +1,3 @@
+enabled: true
+endpoint: http://localhost:3993/scan
+allow_unchecked: false

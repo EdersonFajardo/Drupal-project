@@ -1,0 +1,8 @@
+services:
+  httpav.scanner:
+    class: Drupal\httpav\Scanner
+    arguments:
+      - '@request_stack'
+      - '@http_client'
+      - '@config.factory'
+      - '@logger.factory'
